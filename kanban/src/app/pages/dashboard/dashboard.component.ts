@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Board } from 'src/app/models/board.model';
+import { Column } from 'src/app/models/column.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,27 +12,27 @@ export class DashboardComponent {
 
   constructor() { }
 
-  todo = [
-    'Get to work',
+  board: Board = new Board('Board1', [
+    new Column('To do', [
+      'Get to work',
     'Pick up groceries',
     'Go home',
     'Fall asleep'
-  ];
-
-  doing = [
-    'Get coffee',
+    ]),
+    new Column('Doing', [
+      'Get coffee',
     'Look at open houses',
     'Go to the beach',
     'Make dinner'
-  ];
-
-  done = [
-    'Get up',
+    ]),
+    new Column('Done', [
+      'Get up',
     'Brush teeth',
     'Take a shower',
     'Check e-mail',
     'Walk dog'
-  ];
+    ])
+  ]);
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
