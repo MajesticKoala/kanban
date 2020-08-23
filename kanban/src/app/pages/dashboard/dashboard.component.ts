@@ -34,6 +34,10 @@ export class DashboardComponent {
     ])
   ]);
 
+  createTask(column: Column){
+    column.tasks.push('Added New Task');
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
