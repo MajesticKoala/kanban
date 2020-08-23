@@ -38,6 +38,10 @@ export class DashboardComponent {
     column.tasks.push('Added New Task');
   }
 
+  createColumn(){
+    this.board.columns.push(new Column('Added Column', []))
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
