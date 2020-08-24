@@ -43,6 +43,10 @@ export class DashboardComponent {
     this.board.columns.push(new Column('Added Column', []))
   }
 
+  editColumnName(){
+    
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

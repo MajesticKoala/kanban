@@ -53,15 +53,34 @@
                 }
                 .column-header {
                     margin: 0;
-                    padding: 10px;
+
+                    .mat-expansion-panel {
+                        background-color: rgb(235,236,240);
+                    }
 
                     .column-title {
+                        float: left;
                         margin: 0;
                         padding: 5px;
     
                         font-family: "Nunito", sans-serif;
                         font-size: 20px;
                         font-weight: 700;
+                    }
+                    .edit-column {
+                        border-radius: 20px;
+                        margin-top: 5px;
+                        cursor: pointer;
+                        padding: 6px;
+                        float: right;
+                        font-family: "Nunito", sans-serif;
+                        font-size: 12px;
+                        font-weight: 700;
+
+                        &:hover {
+                            background-color: rgb(220, 220, 220);
+                            color: rgb(70, 70, 70);
+                        }
                     }
                 }
                 .create-task {
