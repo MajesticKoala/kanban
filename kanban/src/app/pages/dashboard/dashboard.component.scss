@@ -36,7 +36,7 @@
                 display: flex;
                 flex-grow: 1;
                 flex-direction: column;
-                background-color: rgb(231, 213, 236);
+                background-color: rgb(235,236,240);
                 border-radius: 5px;
 
                 min-height: 60px;
@@ -65,18 +65,40 @@
                     }
                 }
                 .create-task {
+                    border-radius: 4px;
+                    cursor: pointer;
+                    padding: 5px;
+                    margin-top: 5px;
                     color: rgb(85, 85, 85);
                     display: flex;
                     text-align: center;
                     font-family: "Nunito", sans-serif;
                     font-size: 15px;
                     font-weight: 700;
+
+                    &:hover {
+                        background-color: rgb(220, 220, 220);
+                        color: rgb(70, 70, 70);
+                    }
+                }
+            }
+
+            .create-column {
+                background-color: rgba(235,236,240, 0.5);
+                min-height: 0px;
+                cursor: pointer;
+                text-align: center;
+                vertical-align: middle;
+
+                &:hover {
+                    background-color: rgb(235,236,240);
                 }
             }
         }
     }
 }
 .column-card-wrapper {
+    min-height: 20px;
     flex-grow: 1;
     overflow-y: auto;
 }
@@ -89,7 +111,7 @@
     border-radius: 5px;
     font-family: "Nunito", sans-serif;
     font-size: 15px;
-    cursor: move;
+    cursor: pointer;
 }
 .cdk-drag-preview {
     box-sizing: border-box;

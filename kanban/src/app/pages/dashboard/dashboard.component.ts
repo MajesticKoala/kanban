@@ -12,6 +12,7 @@ export class DashboardComponent {
 
   constructor() { }
 
+
   board: Board = new Board('Board1', [
     new Column('To do', [
       'Get to work',
