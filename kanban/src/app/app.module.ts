@@ -8,8 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatInputModule } from  '@angular/material';
+import { MaterialModule } from '../material-module';
 
 @NgModule({
   declarations: [
@@ -20,15 +19,10 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
     DragDropModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatInputModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
