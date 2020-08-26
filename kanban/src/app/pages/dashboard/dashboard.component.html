@@ -18,20 +18,8 @@
             <div class="board-columns">
                 <div class="board-column" *ngFor='let column of board.columns'>
                     <div class="column-header">
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                              <mat-panel-title>
-                                {{ column.name }}
-                              </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <mat-form-field>
-                                <mat-label>Column Name</mat-label>
-                                <input matInput>
-                            </mat-form-field>
-                          </mat-expansion-panel>
-
-                        <!-- <p class="column-title">{{ column.name }}</p>
-                        <div class="edit-column" (click)='editColumnName'><mat-icon>edit</mat-icon></div> -->
+                        <p class="column-title">{{ column.name }}</p>
+                        <div class="edit-column" (click)='editColumn()'><mat-icon>edit</mat-icon></div>
                     </div>
                     <div class="column-card-wrapper"
                         cdkDropList

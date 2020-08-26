@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Board } from 'src/app/models/board.model';
 import { Column } from 'src/app/models/column.model';
+import { MatDialog } from '@angular/material';
+import { EditColumnDialogComponent } from './edit-column/edit-column-dialog/edit-column-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,7 @@ import { Column } from 'src/app/models/column.model';
 })
 export class DashboardComponent {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
 
   board: Board = new Board('Board1', [
@@ -43,8 +45,8 @@ export class DashboardComponent {
     this.board.columns.push(new Column('Added Column', []))
   }
 
-  editColumnName(){
-    
+  editColumn(){
+    const dialogRef = this.dialog.open(EditColumnDialogComponent);
   }
 
   drop(event: CdkDragDrop<string[]>) {

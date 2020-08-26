@@ -52,11 +52,7 @@
                     margin-left: 0;
                 }
                 .column-header {
-                    margin: 0;
-
-                    .mat-expansion-panel {
-                        background-color: rgb(235,236,240);
-                    }
+                    margin: 0 0 5px 0;
 
                     .column-title {
                         float: left;
@@ -68,6 +64,13 @@
                         font-weight: 700;
                     }
                     .edit-column {
+                        .mat-icon {
+                            color: rgb(57, 55, 61);
+                            font-size: 18px;
+                        }
+
+                        text-align: center;
+                        vertical-align: middle;
                         border-radius: 20px;
                         margin-top: 5px;
                         cursor: pointer;
