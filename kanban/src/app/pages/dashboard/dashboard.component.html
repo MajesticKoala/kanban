@@ -19,7 +19,7 @@
                 <div class="board-column" *ngFor='let column of board.columns'>
                     <div class="column-header">
                         <p class="column-title">{{ column.name }}</p>
-                        <div class="edit-column" (click)='editColumn()'><mat-icon>edit</mat-icon></div>
+                        <div class="edit-column" (click)='editColumn(column)'><mat-icon>edit</mat-icon></div>
                     </div>
                     <div class="column-card-wrapper"
                         cdkDropList

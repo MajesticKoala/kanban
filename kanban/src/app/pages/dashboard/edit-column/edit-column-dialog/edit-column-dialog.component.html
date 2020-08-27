@@ -1,28 +1,17 @@
 <h2>Edit Column</h2>
-<mat-form-field appearance="outline">
-    <mat-label>Name</mat-label>
-    <input matInput placeholder="">
-</mat-form-field>
-<div class="example-button-row">
-    <div class="example-flex-container">
-      <div class="example-button-container">
-        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-      <div class="example-button-container">
-        <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-          <mat-icon>bookmark</mat-icon>
-        </button>
-      </div>
-      <div class="example-button-container">
-        <button mat-fab color="warn" aria-label="Example icon button with a home icon">
-          <mat-icon>home</mat-icon>
-        </button>
-      </div>
-      <div class="example-button-container">
-        <button mat-fab disabled aria-label="Example icon button with a heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-      </div>
-    </div>
+<form formGroupName="formGroup">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="" formControlName="name">
+    </mat-form-field>
+
+    <button mat-flat-button (click)='saveChanges(formGroup)' class="save-button" type='button' color="primary">Save</button>
+
+    <!-- <div class="button-row">
+        <div class="delete-button-container">
+            <button mat-fab color="error" aria-label="Delete column" (click)='deleteColumn()'>
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div> -->
+</form>

@@ -45,8 +45,13 @@ export class DashboardComponent {
     this.board.columns.push(new Column('Added Column', []))
   }
 
-  editColumn(){
+  editColumn(column: Column){
     const dialogRef = this.dialog.open(EditColumnDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+        column.name = result;
+    });
   }
 
   drop(event: CdkDragDrop<string[]>) {

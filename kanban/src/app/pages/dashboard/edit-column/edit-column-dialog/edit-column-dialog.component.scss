@@ -1,7 +1,15 @@
-.mat-dialog-container {
-    width: 400px;
 
-    .mat-form-field {
-        width: 350px;
+
+.mat-form-field {
+    display: block;
+    width: 350px;
+
+    input {
+        width: 100%;
     }
+}
+
+
+.save-button {
+    width: 100%;
 }

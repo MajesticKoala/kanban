@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-column-dialog',
@@ -8,9 +9,20 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class EditColumnDialogComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private dialogRef: MatDialogRef<EditColumnDialogComponent>) { }
+
+  formGroup = new FormGroup({
+    name: new FormControl('')
+  })
+
 
   ngOnInit() {
+  }
+
+  saveChanges(formGroup: FormGroup){
+    console.log(formGroup)
+    this.dialogRef.close({data:formGroup.get('name').value});
   }
 
 }
