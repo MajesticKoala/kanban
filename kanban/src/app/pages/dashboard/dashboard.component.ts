@@ -4,6 +4,7 @@ import { Board } from 'src/app/models/board.model';
 import { Column } from 'src/app/models/column.model';
 import { MatDialog } from '@angular/material';
 import { EditColumnDialogComponent } from './edit-column/edit-column-dialog/edit-column-dialog.component';
+import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,40 +18,56 @@ export class DashboardComponent {
 
   board: Board = new Board('Board1', [
     new Column('To do', [
-      'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-    ]),
-    new Column('Doing', [
-      'Get coffee',
-    'Look at open houses',
-    'Go to the beach',
-    'Make dinner'
-    ]),
-    new Column('Done', [
-      'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
+      new Task('Get to work'),
+      new Task('Pick up groceries')
     ])
   ]);
 
   createTask(column: Column){
-    column.tasks.push('Added New Task');
+    const dialogRef = this.dialog.open(EditColumnDialogComponent);
+    const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
+      if (result.event == 'save') {
+        column.tasks.push(new Task(result.data));
+      }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      dialogRef.componentInstance.onAdd.unsubscribe();
+    });
+  }
+
+  seeTask(task: Task) {
+    const dialogRef = this.dialog.open(EditColumnDialogComponent);
+    const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
+      if (result.event == 'save') {
+        task.name = result.data;
+      }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      dialogRef.componentInstance.onAdd.unsubscribe();
+    });
   }
 
   createColumn(){
-    this.board.columns.push(new Column('Added Column', []))
+    const dialogRef = this.dialog.open(EditColumnDialogComponent);
+    const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
+      if (result.event == 'save') {
+        this.board.columns.push(new Column(result.data, []))
+      }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      dialogRef.componentInstance.onAdd.unsubscribe();
+    });
   }
 
   editColumn(column: Column){
     const dialogRef = this.dialog.open(EditColumnDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
-        column.name = result;
+    const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
+      if (result.event == 'save') {
+        column.name = result.data;
+      }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      dialogRef.componentInstance.onAdd.unsubscribe();
     });
   }
 

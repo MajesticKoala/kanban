@@ -9,6 +9,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MaterialModule } from '../material-module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditColumnDialogComponent } from './pages/dashboard/edit-column/edit-column-dialog/edit-column-dialog.component';
 
 @NgModule({
@@ -27,7 +28,9 @@ import { EditColumnDialogComponent } from './pages/dashboard/edit-column/edit-co
     DragDropModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

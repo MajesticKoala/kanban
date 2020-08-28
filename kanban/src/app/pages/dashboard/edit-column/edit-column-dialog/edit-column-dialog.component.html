@@ -1,17 +1,9 @@
-<h2>Edit Column</h2>
-<form formGroupName="formGroup">
+<form [formGroup]="formGroup">
+    <mat-card-title>Edit Column</mat-card-title>
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input matInput placeholder="" formControlName="name">
     </mat-form-field>
 
-    <button mat-flat-button (click)='saveChanges(formGroup)' class="save-button" type='button' color="primary">Save</button>
-
-    <!-- <div class="button-row">
-        <div class="delete-button-container">
-            <button mat-fab color="error" aria-label="Delete column" (click)='deleteColumn()'>
-                <mat-icon>delete</mat-icon>
-            </button>
-        </div>
-    </div> -->
+    <button mat-flat-button (click)='saveChanges()' color="primary" [disabled]="!formGroup.valid">Save</button>
 </form>

@@ -25,7 +25,7 @@
                         cdkDropList
                         [cdkDropListData]="column.tasks"
                         (cdkDropListDropped)="drop($event)">
-                        <div class="column-card" *ngFor="let item of column.tasks" cdkDrag>{{item}}</div>
+                        <div class="column-card" *ngFor="let task of column.tasks" cdkDrag (click)='seeTask(task)'>{{task.name}}</div>
                     </div>
                     <div class="create-task" (click)='createTask(column)'>
                         + Add task
