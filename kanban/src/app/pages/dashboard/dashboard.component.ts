@@ -35,11 +35,16 @@ export class DashboardComponent {
     });
   }
 
-  seeTask(task: Task) {
+  seeTask(column: Column, task: Task) {
     const dialogRef = this.dialog.open(EditColumnDialogComponent);
     const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
       if (result.event == 'save') {
         task.name = result.data;
+      } else if (result.event == 'delete') {
+        const index: number = column.tasks.indexOf(task);
+        if (index !== -1) {
+            column.tasks.splice(index, 1);
+        } 
       }
     });
     dialogRef.afterClosed().subscribe(() => {
@@ -64,6 +69,11 @@ export class DashboardComponent {
     const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
       if (result.event == 'save') {
         column.name = result.data;
+      } else if (result.event == 'delete') {
+        const index: number = this.board.columns.indexOf(column)
+        if (index !== -1) {
+            this.board.columns.splice(index, 1);
+        } 
       }
     });
     dialogRef.afterClosed().subscribe(() => {

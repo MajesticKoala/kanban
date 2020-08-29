@@ -26,4 +26,13 @@ export class EditColumnDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  delete() {
+    this.onAdd.emit({event:'delete'});
+    this.dialogRef.close();
+  }
+
+  cancel(){
+    this.dialogRef.close();
+  }
+
 }
