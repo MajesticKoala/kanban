@@ -1,1 +1,14 @@
-<p>edit-task-dialog works!</p>
+<form [formGroup]="formGroup">
+    <div class="window">
+        <mat-icon class="close-button" inline=true (click)="cancel()">close</mat-icon>
+        <mat-card-title>Edit Task</mat-card-title>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="" formControlName="name">
+        </mat-form-field>
+
+        <button mat-flat-button (click)='saveChanges()' color="primary" [disabled]="!formGroup.valid">Save</button>
+        <button mat-icon-button (click)='delete()' color="warn" class="delete-button"><mat-icon>delete</mat-icon></button>
+    </div>  
+
+</form>

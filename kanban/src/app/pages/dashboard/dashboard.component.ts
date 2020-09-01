@@ -5,6 +5,7 @@ import { Column } from 'src/app/models/column.model';
 import { MatDialog } from '@angular/material';
 import { EditColumnDialogComponent } from './edit-column/edit-column-dialog/edit-column-dialog.component';
 import { Task } from 'src/app/models/task.model';
+import { EditTaskDialogComponent } from './edit-task/edit-task-dialog/edit-task-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,7 +37,7 @@ export class DashboardComponent {
   }
 
   seeTask(column: Column, task: Task) {
-    const dialogRef = this.dialog.open(EditColumnDialogComponent);
+    const dialogRef = this.dialog.open(EditTaskDialogComponent);
     const sub = dialogRef.componentInstance.onAdd.subscribe(result => {
       if (result.event == 'save') {
         task.name = result.data;

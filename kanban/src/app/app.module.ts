@@ -12,16 +12,19 @@ import { MaterialModule } from '../material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditColumnDialogComponent } from './pages/dashboard/edit-column/edit-column-dialog/edit-column-dialog.component';
 import { EditTaskDialogComponent } from './pages/dashboard/edit-task/edit-task-dialog/edit-task-dialog.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   entryComponents: [
-    EditColumnDialogComponent
+    EditColumnDialogComponent,
+    EditTaskDialogComponent
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
     EditColumnDialogComponent,
-    EditTaskDialogComponent
+  EditTaskDialogComponent,
+  LoginComponent
   ],
   imports: [
     BrowserModule,

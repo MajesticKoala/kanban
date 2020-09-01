@@ -1,0 +1,43 @@
+.mat-dialog-container {
+    padding: 0px !important;
+}
+.mat-form-field {
+    margin-top: 15px;
+    display: block;
+    width: 350px;
+
+    input {
+        width: 100%;
+    }
+}
+
+.window {
+    position: relative;
+    //padding: 20px;
+
+    .close-button{
+        position: absolute;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+        text-align: center;
+        line-height: 32px;
+        cursor: pointer;
+        transition: background-color 100ms,color 100ms;
+
+        &:hover {
+            background-color: rgba(83, 83, 83, 1);
+        }
+    }
+
+    .save-button {
+        width: 100%;
+    }
+
+    .delete-button {
+        float: right;
+    }
+}
