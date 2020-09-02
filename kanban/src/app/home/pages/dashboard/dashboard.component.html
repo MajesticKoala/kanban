@@ -1,17 +1,5 @@
 <div class="root">
-    <mat-toolbar color="primary">
-        <mat-toolbar-row>
-            <h1>Kanban</h1>
-            <span class="menu-spacer"></span>
-            <div>
-                <a mat-button [routerLink]="'/accounts'"> Dashboard </a>
-                <a mat-button [routerLink]="'/create-account'"> Account </a>
-                <a mat-button [routerLink]="'/contacts'"> Settings </a>
-
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
-
+    <app-header></app-header>
     <div class="board">
 
         <div class="board-wrapper" cdkDropListGroup>
