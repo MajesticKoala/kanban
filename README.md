@@ -1,1 +1,1 @@
-# Kandban board with Angular
+# Kandban board with Angular and webapi for backend
